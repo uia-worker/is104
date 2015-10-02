@@ -3,17 +3,32 @@
 <head>
 </head>
 <body>
-<form>
-  <input name="nr1" type="text">
-  <input name="nr2" type="text">
-</form>
 
 <script>
-var a = prompt("Første tall: ");
-var b = prompt("Andre tall: ");
-function add(x,y) { return +x + +y; }
-console.log(add(a,b));
+  //var a = prompt("Første tall: ");
+  //var b = prompt("Andre tall: ");
+  function add(x,y) { return +x + +y; }
+  //console.log(add(a,b));
 </script>
+
+
+  <input id="textInput1" type="text" />
+  <span> + </span>
+  <input id="textInput2" type="text" />
+  <button name="add" onclick="runadd();">=</button>
+  <span id="sum"></span>
+
+<script>
+  function runadd() {
+    var textInputElement1 = document.getElementById("textInput1"),
+        textInputElement2 = document.getElementById("textInput2"),
+        sumElement = document.getElementById("sum");
+    var textNumber1 = textInputElement1.value;
+    var textNumber2 = textInputElement2.value;
+    sumElement.innerHTML = add(textNumber1, textNumber2);
+  }
+</script>
+
 
 </body>
 </html>
